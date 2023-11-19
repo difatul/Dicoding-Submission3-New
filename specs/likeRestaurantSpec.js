@@ -13,7 +13,7 @@ describe('Liking A Restaurant', () => {
   beforeEach(() => {
     addLikeButtonContainer();
 
-    spyOn(FavoriteRestaurantIdb, 'searchRestaurants');
+    // spyOn(FavoriteRestaurantIdb, 'searchRestaurants');
   });
 
   it('should show the like button when the resto has not been liked before', async () => {

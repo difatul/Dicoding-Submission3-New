@@ -115,26 +115,42 @@ module.exports = {
       // swDest: './sw.bundle.js',
       // swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
       swDest: path.resolve(__dirname, 'src/scripts/sw.js'),
-    }),
-    // workbox
-    new WorkboxWebpackPlugin.GenerateSW({
-      swDest: './sw.bundle.js',
       runtimeCaching: [
         {
-          urlPattern: ({ url }) => url.href.startsWith('https://api.themoviedb.org/3/'),
+          urlPattern: ({ url }) => url.href.startsWith('https://restaurant-api.dicoding.dev/'),
           handler: 'StaleWhileRevalidate',
           options: {
-            cacheName: 'themoviedb-api',
+            cacheName: 'restaurant-database',
           },
         },
         {
-          urlPattern: ({ url }) => url.href.startsWith('https://image.tmdb.org/t/p/w500/'),
+          urlPattern: ({ url }) => url.href.startsWith('https://restaurant-api.dicoding.dev/images/medium/'),
           handler: 'StaleWhileRevalidate',
           options: {
-            cacheName: 'themoviedb-image-api',
+            cacheName: 'restaurant-database',
           },
         },
       ],
     }),
+    // workbox
+    // new WorkboxWebpackPlugin.GenerateSW({
+    //   swDest: './sw.bundle.js',
+    //   runtimeCaching: [
+    //     {
+    //       urlPattern: ({ url }) => url.href.startsWith('https://restaurant-api.dicoding.dev/'),
+    //       handler: 'StaleWhileRevalidate',
+    //       options: {
+    //         cacheName: 'restaurant-database',
+    //       },
+    //     },
+    //     {
+    //       urlPattern: ({ url }) => url.href.startsWith('https://restaurant-api.dicoding.dev/images/medium/'),
+    //       handler: 'StaleWhileRevalidate',
+    //       options: {
+    //         cacheName: 'restaurant-database',
+    //       },
+    //     },
+    //   ],
+    // }),
   ],
 };
