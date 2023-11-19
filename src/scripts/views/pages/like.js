@@ -16,7 +16,11 @@ const Like = {
   async afterRender() {
     const restos = await FavoriteMovieIdb.getAllRestaurants();
     const restosContainer = document.querySelector('#restos');
-
+    const content = document.querySelector('.content');
+    if (restos.length === 0) {
+      content.innerHTML
+      += '<div class="empty">Tidak Ada Resto Untuk DItampilkan, Tambahkan Beberapa Restaurant Pada FAvorit</div>';
+    }
     restos.forEach((resto) => {
       restosContainer.innerHTML += createRestaurantItemTemplate(resto);
     });
