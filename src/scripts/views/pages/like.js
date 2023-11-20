@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import FavoriteMovieIdb from '../../data/favorite-restaurant-idb';
 import { createRestaurantItemTemplate } from '../teamplates/template-creator';
 
@@ -7,7 +8,7 @@ const Like = {
       <div class="content">
         <h2 class="content__heading">Your Liked Movie</h2>
         <div id="restos" class="restos">
- 
+        
         </div>
       </div>
     `;
